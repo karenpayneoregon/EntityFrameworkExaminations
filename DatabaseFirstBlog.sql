@@ -1,6 +1,5 @@
 USE [master]
 GO
-/****** Object:  Database [DatabaseFirst.Blogging]    Script Date: 6/21/2019 8:13:29 AM ******/
 CREATE DATABASE [DatabaseFirst.Blogging]
  CONTAINMENT = NONE
  ON  PRIMARY 
