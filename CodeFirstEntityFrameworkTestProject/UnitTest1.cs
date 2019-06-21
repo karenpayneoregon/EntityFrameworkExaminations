@@ -36,12 +36,13 @@ namespace CodeFirstEntityFrameworkTestProject
         /// <summary>
         /// Demonstration for adding a parent record and several
         /// child records disconnected
+        /// NOTE: Passing true to AddBlog second parameter will log EF work.
         /// </summary>
         [TestMethod]
         public void AddBlogWithPosts_DisconnectedTest()
         {
             var ops = new DataOperations();
-            Assert.IsTrue(ops.AddBlog(ThreePostBlog()), 
+            Assert.IsTrue(ops.AddBlog(ThreePostBlog(),true), 
                 "Expected adding blog disconnection to function");
 
         }

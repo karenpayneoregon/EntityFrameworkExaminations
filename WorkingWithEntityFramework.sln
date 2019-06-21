@@ -19,6 +19,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		readme.md = readme.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseFirstNorthWindLibrary", "DatabaseFirstNorthWindLibrary\DatabaseFirstNorthWindLibrary.csproj", "{B8BD427C-DC02-4979-9BDA-E9218CCEAE6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWindFormProject", "NorthWindFormProject\NorthWindFormProject.csproj", "{75BD5D47-523F-47D9-9C12-C3DFD9635529}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows fixtures", "Windows fixtures", "{DFB3CC94-65B2-4A28-A2CE-0F6262E5AEF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +39,14 @@ Global
 		{0D01E7F9-0147-4F3B-9113-E465A1A95C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D01E7F9-0147-4F3B-9113-E465A1A95C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D01E7F9-0147-4F3B-9113-E465A1A95C37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8BD427C-DC02-4979-9BDA-E9218CCEAE6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8BD427C-DC02-4979-9BDA-E9218CCEAE6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8BD427C-DC02-4979-9BDA-E9218CCEAE6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8BD427C-DC02-4979-9BDA-E9218CCEAE6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75BD5D47-523F-47D9-9C12-C3DFD9635529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75BD5D47-523F-47D9-9C12-C3DFD9635529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75BD5D47-523F-47D9-9C12-C3DFD9635529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75BD5D47-523F-47D9-9C12-C3DFD9635529}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +56,8 @@ Global
 		{E86ED764-37C3-40E1-9D53-5C5396B50CD5} = {D64EEA4C-E06E-4204-9661-2BF15DA83358}
 		{CE111761-5E74-479C-8487-664DB3A18998} = {D64EEA4C-E06E-4204-9661-2BF15DA83358}
 		{0D01E7F9-0147-4F3B-9113-E465A1A95C37} = {CE111761-5E74-479C-8487-664DB3A18998}
+		{B8BD427C-DC02-4979-9BDA-E9218CCEAE6E} = {E86ED764-37C3-40E1-9D53-5C5396B50CD5}
+		{75BD5D47-523F-47D9-9C12-C3DFD9635529} = {DFB3CC94-65B2-4A28-A2CE-0F6262E5AEF4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2A9961D3-ED13-493D-92ED-C7FBD2B254F2}

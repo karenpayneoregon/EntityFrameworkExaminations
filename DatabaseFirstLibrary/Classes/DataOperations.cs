@@ -12,12 +12,15 @@ namespace DatabaseFirstLibrary.Classes
     public class DataOperations : SqlServerConnection
     {
         /// <summary>
-        /// Given a new blog attach to the context and add to
-        /// the database along with any post attached to the blog
+        /// Determine State by if the blog id is 0 or not, if
+        /// 0 then add else update.
         /// </summary>
         /// <param name="pBlog"></param>
         /// <returns></returns>
-        public bool AddBlog(Blog pBlog)
+        /// <remarks>
+        /// https://docs.microsoft.com/en-us/ef/ef6/saving/change-tracking/entity-state
+        /// </remarks>
+        public bool AddOrUpdateBlog(Blog pBlog)
         {
             mHasException = false;
 
@@ -25,6 +28,48 @@ namespace DatabaseFirstLibrary.Classes
             {
                 using (var context = new BloggingContext())
                 {
+                    context.Entry(pBlog).State = pBlog.BlogId == 0 ? EntityState.Added : EntityState.Modified;
+                    return context.SaveChanges() == 4;
+                }
+            }
+            catch (DbEntityValidationException vex)
+            {
+                /*
+                 * Start of validation
+                 */
+                var errors = vex.EntityValidationErrors;
+                mHasException = true;
+                mLastException = vex;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                mHasException = true;
+                mLastException = ex;
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Given a new blog attach to the context and add to
+        /// the database along with any post attached to the blog
+        /// </summary>
+        /// <param name="pBlog"></param>
+        /// <param name="pLog">If true write log to output window or output window</param>
+        /// <returns></returns>
+        public bool AddBlog(Blog pBlog, bool pLog = false)
+        {
+            mHasException = false;
+
+            try
+            {
+                using (var context = new BloggingContext())
+                {
+                    if (pLog)
+                    {
+                        context.Database.Log = Console.Write;
+                    }
+
                     context.Entry(pBlog).State = EntityState.Added;
                     return context.SaveChanges() == 4;
                 }
@@ -53,6 +98,7 @@ namespace DatabaseFirstLibrary.Classes
             {
                 var blog = context.Blogs.Add(new Blog()
                 {
+                    Title = "Dummy",
                     Name = "All about EF",
                     Posts = new List<Post>()
                 });
@@ -67,10 +113,11 @@ namespace DatabaseFirstLibrary.Classes
                 context.SaveChanges();
 
                 // get post count without returning data
-                return context.Blogs
+                var test =  context.Blogs
                     .Where(o => o.BlogId == blog.BlogId)
                     .SelectMany(o => o.Posts)
                     .Count();
+                return test;
             }
         }
         /// <summary>
