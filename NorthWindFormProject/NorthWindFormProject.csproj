@@ -94,8 +94,5 @@
       <Name>DatabaseFirstNorthWindLibrary</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="CreateDatabaseTablesWithData.sql" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
