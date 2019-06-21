@@ -43,6 +43,14 @@ namespace CodeFirstNorthWindTestProject
         public void EntityStateTest()
         {
 
+        }
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/ef/ef6/saving/validation
+        /// </summary>
+        [TestMethod]
+        public void ValidationTest()
+        {
+
         } 
     }
 }
