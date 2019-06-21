@@ -32,15 +32,16 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.CompanyNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContactNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CountryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 350);
+            this.panel1.Location = new System.Drawing.Point(0, 253);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 100);
+            this.panel1.Size = new System.Drawing.Size(561, 59);
             this.panel1.TabIndex = 0;
             // 
             // dataGridView1
@@ -49,11 +50,12 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CompanyNameColumn,
-            this.ContactNameColumn});
+            this.ContactNameColumn,
+            this.CountryColumn});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 350);
+            this.dataGridView1.Size = new System.Drawing.Size(561, 253);
             this.dataGridView1.TabIndex = 1;
             // 
             // CompanyNameColumn
@@ -68,14 +70,21 @@
             this.ContactNameColumn.HeaderText = "Contact";
             this.ContactNameColumn.Name = "ContactNameColumn";
             // 
+            // CountryColumn
+            // 
+            this.CountryColumn.DataPropertyName = "Country";
+            this.CountryColumn.HeaderText = "Country";
+            this.CountryColumn.Name = "CountryColumn";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(561, 312);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -88,6 +97,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyNameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ContactNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CountryColumn;
     }
 }
 

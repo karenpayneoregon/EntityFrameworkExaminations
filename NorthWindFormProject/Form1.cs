@@ -16,7 +16,7 @@ namespace NorthWindFormProject
     public partial class Form1 : Form
     {
         //https://github.com/waynebloss/BindingListView
-        private BindingListView<Customer> view;
+        private BindingListView<CustomerGridEdition> view;
         public Form1()
         {
             InitializeComponent();
@@ -27,12 +27,14 @@ namespace NorthWindFormProject
         {
             using (var context = new NorthWindAzureContext())
             {
-                var customers = context.Customers.ToList();
-                view = new BindingListView<Customer>(customers);
+                var customers = context.Customers.Select(cust => new CustomerGridEdition {Id = cust.CustomerIdentifier, CompanyName = cust.CompanyName, ContactName = cust.ContactName,Country = cust.Country.CountryName}) .ToList();
+                view = new BindingListView<CustomerGridEdition>(customers);
                 dataGridView1.AutoGenerateColumns = false;
                 dataGridView1.DataSource = view;
 
             }
         }
     }
+
+ 
 }
