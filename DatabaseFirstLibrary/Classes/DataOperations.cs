@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Data.SqlClient;
 using System.Linq;
-using BaseConnectionLibrary;
 using BaseConnectionLibrary.ConnectionClasses;
 
 namespace DatabaseFirstLibrary.Classes
@@ -27,6 +28,16 @@ namespace DatabaseFirstLibrary.Classes
                     context.Entry(pBlog).State = EntityState.Added;
                     return context.SaveChanges() == 4;
                 }
+            }
+            catch (DbEntityValidationException vex)
+            {
+                /*
+                 * Start of validation
+                 */
+                var errors = vex.EntityValidationErrors;
+                mHasException = true;
+                mLastException = vex;
+                return false;
             }
             catch (Exception ex)
             {

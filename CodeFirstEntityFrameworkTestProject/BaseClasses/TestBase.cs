@@ -4,16 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DatabaseFirstLibrary;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CodeFirstEntityFrameworkTestProject.BaseClasses
 {
     public class TestBase
     {
+        protected TestContext TestContextInstance;
+        public TestContext TestContext
+        {
+            get => TestContextInstance;
+            set
+            {
+                TestContextInstance = value;
+                TestResults.Add(TestContext);
+            }
+        }
+
+        public static IList<TestContext> TestResults;
         public Blog ThreePostBlog()
         {
             var blog = new Blog()
             {
-                Name = "All about EF",
+                Title = "Learning EF",
+                Name = "Karen 1",
                 Posts = new List<Post>()
             };
 

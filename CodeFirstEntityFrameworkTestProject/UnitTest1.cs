@@ -11,6 +11,17 @@ namespace CodeFirstEntityFrameworkTestProject
     [TestClass(), TestCategory("EF6 code first with existing db")]
     public class UnitTest1 : TestBase
     {
+        [TestInitialize]
+        public void Init()
+        {
+            Console.WriteLine(TestContext.TestName);
+        }
+        [ClassInitialize()]
+        public static void MyClassInitialize(TestContext testContext)
+        {
+            TestResults = new List<TestContext>();
+        }
+
         /// <summary>
         /// Demonstration for adding a parent record and several
         /// child records connected.
