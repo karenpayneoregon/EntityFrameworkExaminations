@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DatabaseFirstNorthWindLibrary;
 using Equin.ApplicationFramework;
+using System.Data.Entity;
 
 namespace NorthWindFormProject
 {
@@ -27,10 +28,15 @@ namespace NorthWindFormProject
         {
             using (var context = new NorthWindAzureContext())
             {
-                var customers = context.Customers.Select(cust => new CustomerGridEdition {Id = cust.CustomerIdentifier, CompanyName = cust.CompanyName, ContactName = cust.ContactName,Country = cust.Country.CountryName}) .ToList();
-                view = new BindingListView<CustomerGridEdition>(customers);
-                dataGridView1.AutoGenerateColumns = false;
-                dataGridView1.DataSource = view;
+                //var customers = context.Customers.Select(cust => new CustomerGridEdition {Id = cust.CustomerIdentifier, CompanyName = cust.CompanyName, ContactName = cust.ContactName,Country = cust.Country.CountryName}) .ToList();
+                //view = new BindingListView<CustomerGridEdition>(customers);
+                //dataGridView1.AutoGenerateColumns = false;
+                //dataGridView1.DataSource = view;
+
+                var likeResult = context.Customers.Where(c => DbFunctions.Like(c.City, "%on")).ToList();
+                Console.WriteLine();
+                likeResult = context.Customers.Where(c => DbFunctions.Like(c.City, "M%")).ToList();
+                Console.WriteLine();
 
             }
         }
