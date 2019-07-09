@@ -33,11 +33,14 @@
             this.CompanyNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContactNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CountryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 253);
             this.panel1.Name = "panel1";
@@ -76,6 +79,16 @@
             this.CountryColumn.HeaderText = "Country";
             this.CountryColumn.Name = "CountryColumn";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(19, 18);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -86,6 +99,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -98,6 +112,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyNameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ContactNameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CountryColumn;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -7,9 +7,10 @@ namespace DatabaseFirstNorthWindLibrary
 
     public partial class NorthWindAzureContext : DbContext
     {
-        public NorthWindAzureContext()
-            : base("name=NorthWindAzureModel")
+        public NorthWindAzureContext() : base("name=NorthWindAzureModel")
         {
+            //Configuration.AutoDetectChangesEnabled = false;
+            //Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<Category> Categories { get; set; }

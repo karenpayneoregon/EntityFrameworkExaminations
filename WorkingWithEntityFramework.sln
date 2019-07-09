@@ -26,7 +26,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWindFormProject", "Nor
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows fixtures", "Windows fixtures", "{DFB3CC94-65B2-4A28-A2CE-0F6262E5AEF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstNorthWindTestProject", "CodeFirstNorthWindTestProject\CodeFirstNorthWindTestProject.csproj", "{78D5B8B6-6DA3-4EFE-B37D-80FAA0E0FFC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeFirstNorthWindTestProject", "CodeFirstNorthWindTestProject\CodeFirstNorthWindTestProject.csproj", "{78D5B8B6-6DA3-4EFE-B37D-80FAA0E0FFC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
