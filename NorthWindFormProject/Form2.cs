@@ -36,6 +36,7 @@ namespace NorthWindFormProject
 
             dataGridView1.Columns["CompanyNameColumn"].DataPropertyName = "CompanyName";
             dataGridView1.Columns["CustomerIdentifierColumn"].DataPropertyName = "CustomerIdentifier";
+            dataGridView1.Columns["CityColumn"].DataPropertyName = "city";
 
 
         }
@@ -44,15 +45,44 @@ namespace NorthWindFormProject
         {
             context.Dispose();
         }
-
+        /// <summary>
+        /// Demo get only changed fields 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             var item = view.FirstOrDefault(c => c.CustomerIdentifier == 4);
 
+
+
             var entry = context.Entry(item);
-            CheckIfDifferent(entry);
+
+            if (entry.State != EntityState.Modified) return;
+            //CheckIfDifferent(entry);
             var originalEntity = context.Customers.AsNoTracking().FirstOrDefault(me => me.CustomerIdentifier == item.CustomerIdentifier);
+
             Console.WriteLine();
+
+
+            foreach (var propertyName in entry.CurrentValues.PropertyNames)
+            {
+                //Console.WriteLine("Property Name: {0}", propertyName);
+
+                //get original value
+                var orgVal = entry.OriginalValues[propertyName];
+                //Console.WriteLine("     Original Value: {0}", orgVal);
+
+                //get current values
+                var curVal = entry.CurrentValues[propertyName];
+                //Console.WriteLine("     Current Value: {0}", curVal);
+
+
+                if (!orgVal.Equals(curVal))
+                {
+                    Console.WriteLine($"{propertyName} -> {orgVal} - {curVal}");
+                }
+            }
         }
 
         private void DisplayTrackedEntities(DbChangeTracker changeTracker)
