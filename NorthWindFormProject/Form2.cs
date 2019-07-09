@@ -17,6 +17,8 @@ namespace NorthWindFormProject
     public partial class Form2 : Form
     {
         private NorthWindAzureContext context = new NorthWindAzureContext();
+
+        //https://github.com/waynebloss/BindingListView
         private BindingListView<Customer> view;
         public Form2()
         {
@@ -60,7 +62,8 @@ namespace NorthWindFormProject
 
             if (entry.State != EntityState.Modified) return;
             //CheckIfDifferent(entry);
-            var originalEntity = context.Customers.AsNoTracking().FirstOrDefault(me => me.CustomerIdentifier == item.CustomerIdentifier);
+            var originalEntity = context.Customers.AsNoTracking()
+                .FirstOrDefault(me => me.CustomerIdentifier == item.CustomerIdentifier);
 
             Console.WriteLine();
 
