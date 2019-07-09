@@ -49,6 +49,8 @@ namespace NorthWindFormProject
         {
             var item = view.FirstOrDefault(c => c.CustomerIdentifier == 4);
 
+            var entry = context.Entry(item);
+            CheckIfDifferent(entry);
             var originalEntity = context.Customers.AsNoTracking().FirstOrDefault(me => me.CustomerIdentifier == item.CustomerIdentifier);
             Console.WriteLine();
         }
@@ -133,6 +135,9 @@ namespace NorthWindFormProject
             if (entry.State != EntityState.Modified)
                 return;
 
+            /*
+             * Have at least property changed
+             */
             if (entry.OriginalValues.PropertyNames.Any(propertyName => !entry.OriginalValues[propertyName].Equals(entry.CurrentValues[propertyName])))
                 return;
 
