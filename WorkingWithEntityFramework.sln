@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows fixtures", "Windows
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeFirstNorthWindTestProject", "CodeFirstNorthWindTestProject\CodeFirstNorthWindTestProject.csproj", "{78D5B8B6-6DA3-4EFE-B37D-80FAA0E0FFC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Temp", "Temp\Temp.csproj", "{B5BBC0A6-D8EF-447B-82E8-95FAB4CBAD58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,10 @@ Global
 		{78D5B8B6-6DA3-4EFE-B37D-80FAA0E0FFC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78D5B8B6-6DA3-4EFE-B37D-80FAA0E0FFC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78D5B8B6-6DA3-4EFE-B37D-80FAA0E0FFC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5BBC0A6-D8EF-447B-82E8-95FAB4CBAD58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5BBC0A6-D8EF-447B-82E8-95FAB4CBAD58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5BBC0A6-D8EF-447B-82E8-95FAB4CBAD58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5BBC0A6-D8EF-447B-82E8-95FAB4CBAD58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

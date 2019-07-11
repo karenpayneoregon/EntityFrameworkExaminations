@@ -41,7 +41,9 @@ namespace NorthWindFormProject
             dataGridView1.Columns["CityColumn"].DataPropertyName = "city";
 
 
+
         }
+
 
         private void Form2_Closing(object sender, CancelEventArgs e)
         {
@@ -147,8 +149,8 @@ namespace NorthWindFormProject
         {
             foreach (Customer customer in view.DataSource)
             {
-                var current = context.Entry(customer).Property(x => x.CompanyName).IsModified;
-                if (current)
+                var changed = context.Entry(customer).Property(x => x.CompanyName).IsModified;
+                if (changed)
                 {
                     Console.WriteLine($"{customer.CompanyName} - {context.Entry(customer).Property(x => x.CompanyName).OriginalValue}");
                 }
